@@ -1,0 +1,218 @@
+/* 기본 바디와 배경 */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+  color: #222;
+  line-height: 1.6;
+}
+
+/* 헤더와 푸터 스타일 */
+header, footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.5);
+}
+
+/* 네비게이션 메뉴 */
+nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 18px;
+  position: relative;
+}
+
+nav a {
+  color: #ecf0f1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #1abc9c;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #1abc9c;
+}
+
+/* 카드 스타일 */
+.card {
+  background: white;
+  margin: 30px auto;
+  padding: 30px 40px;
+  max-width: 800px;
+  border-radius: 20px;
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.1),
+    inset 0 0 10px rgba(26, 188, 156, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 12px 40px rgba(26, 188, 156, 0.4),
+    inset 0 0 15px rgba(26, 188, 156, 0.2);
+}
+
+.card h2 {
+  font-size: 2rem;
+  color: #16a085;
+  margin-bottom: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.card h2 .icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  fill: #16a085;
+}
+
+/* 프로필 이미지 */
+.card img {
+  max-width: 180px;
+  border-radius: 50%;
+  display: block;
+  margin: 24px auto;
+  box-shadow: 0 8px 20px rgba(22, 160, 133, 0.3);
+  transition: transform 0.4s ease;
+}
+
+.card img:hover {
+  transform: scale(1.05) rotate(3deg);
+}
+
+/* 기술 스택 리스트 */
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.skill-list li {
+  background: linear-gradient(135deg, #1abc9c, #16a085);
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 16px 32px;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(22, 160, 133, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  user-select: none;
+}
+
+.skill-list li:hover {
+  transform: translateY(-8px) scale(1.1);
+  box-shadow: 0 12px 24px rgba(22, 160, 133, 0.5);
+  filter: brightness(1.15);
+}
+
+/* 스킬별 색상 그라데이션 */
+.html       { background: linear-gradient(45deg, #E34F26, #F06529); }
+.css        { background: linear-gradient(45deg, #1572B6, #2A65B1); }
+.responsive { background: linear-gradient(45deg, #0F9D58, #0C7D44); }
+.git        { background: linear-gradient(45deg, #F05033, #D03E27); }
+.csharp     { background: linear-gradient(45deg, #9B4F96, #80437E); }
+.unity      { background: linear-gradient(45deg, #222C37, #1A212B); }
+
+/* 링크 스타일 */
+a {
+  color: #16a085;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #1abc9c;
+  text-decoration: underline;
+}
+
+/* 연락처 리스트 */
+#contact ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+#contact li {
+  margin: 10px 0;
+}
+
+/* 푸터 텍스트 */
+footer {
+  font-size: 1rem;
+  margin-top: 50px;
+  color: #95a5a6;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav ul li {
+    margin: 0;
+  }
+
+  .card {
+    margin: 20px 15px;
+    padding: 25px 20px;
+  }
+
+  .card h2 {
+    font-size: 1.6rem;
+  }
+
+  .skill-list {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .skill-list li {
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+  }
+
+  .card img {
+    max-width: 140px;
+  }
+}
